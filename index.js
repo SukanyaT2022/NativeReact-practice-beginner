@@ -11,7 +11,7 @@ import InputBox from './src/screen/InputBox';
 import Register from './src/screen/Register';
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => Register);
+AppRegistry.registerComponent(appName, () => InputBox);
 // line 10 what page you want to get start when open app
 
 // Entry Point of App
