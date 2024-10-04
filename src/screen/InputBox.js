@@ -6,14 +6,16 @@ import {
   StyleSheet,
   Image,
   TextInput,
+  ScrollView,
+  KeyboardAvoidingView,
 } from 'react-native';
 
 const InputBox = () => {
   const submitFunc = () => {};
   return (
-    <View style={style.styleWrapper}>
+    <KeyboardAvoidingView style={style.styleWrapper}>
 
-      <View style={style.styleMainBox}>
+      <ScrollView style={style.styleMainBox}>
 
         <Image
         style={{
@@ -28,59 +30,83 @@ marginTop:30,
           }}></Image>
 
         <View style={style.wrapTextInputBox}>
-          <Text>UserName</Text>
+          <Text style={{marginVertical:10}}>UserName</Text>
           <TextInput
            style={style.styleInputBox} 
-           defaultValue="fill user name">
-           </TextInput>
+           placeholder="fill user name"
+        
+           />
+          
         </View>
 
-        <View>
-          <Text>Password</Text>
+        <View style={style.wrapTextInputBox}>
+          <Text style={{marginVertical:10}}>Password</Text>
           <TextInput
             style={style.styleInputBox}
-            defaultValue="fill password"></TextInput>
+            placeholder="fill password"/>
         </View>
+
+
+        <View style={style.wrapTextInputBox}>
+          <Text style={{marginVertical:10}}>UserName</Text>
+          <TextInput
+           style={style.styleInputBox} 
+           placeholder="fill user name"
+        
+           />
+          
+        </View>
+
+        <View style={style.wrapTextInputBox}>
+          <Text style={{marginVertical:10}}>Password</Text>
+          <TextInput
+            style={style.styleInputBox}
+            placeholder="fill password"/>
+        </View>
+
 
         <TouchableOpacity onPress={submitFunc} style={style.submitButton}>
           <Text style={{margin:'auto'}}>Submit</Text>
         </TouchableOpacity>
 
-      </View>
+      </ScrollView>
 
-    </View>
+    </KeyboardAvoidingView>
   );
 };
 
 const style = StyleSheet.create({
   styleWrapper: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    // alignItems: 'center',
+    // justifyContent: 'flex-start',
+    marginTop: 30, // need to put justifyContent so we can use margin top and bottom
+
   },
   styleMainBox: {
     backgroundColor: 'green',
-    height: '500px',
-    width: '80%',
+    flexGrow: 1,
+    // height: '500px', never add hight otherwise the screen can not scroll
+    // flex:1,
+    // padding:20,
 
-    // display:'flex',
-    // alignItems:'center'
-    // margin:'auto'
+
   },
   wrapTextInputBox: {
-//    flex:1,
+marginVertical:10,
   },
   styleInputBox: {
     height: 50,
-    width: 80,
-    borderRightColor: 'green',
-    borderBottomWidth: 2,
+    borderColor: 'red',
+    borderWidth: 4,
+    backgroundColor: 'pink',
   },
   submitButton: {
     backgroundColor: 'red',
-    width: '50%',
-    padding:' 5px 30px',
-    margin:'auto',
+    marginHorizontal: 20,// mean margin left and right
+    marginVertical:20,//mean margin top and bottom
+    paddingVertical:10,
+    // margin:'auto',
  
     // margin:' 30px auto 30px auto',
     // margin:' 30 auto ',
