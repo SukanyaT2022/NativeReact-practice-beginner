@@ -27,12 +27,25 @@ const NewLogin = () => {
         <Text style={styles.headerStyle}>Welcome!</Text>
       </View>
 
-      <View style={{flex: 0.7, }}>
-        <TextInput placeholderTextColor={'black'} style={styles.inputStyle} placeholder="User Name" />
-        <TextInput placeholderTextColor={'black'}  style={styles.inputStyle} placeholder="User Name" />
+      <View style={{flex: 0.3, backgroundColor: 'orange', justifyContent:'flex-end'}}>
+        <TextInput
+          placeholderTextColor={'black'}
+          style={styles.inputStyle}
+          placeholder="User Name"
+        />
+        <TextInput
+          placeholderTextColor={'black'}
+          style={styles.inputStyle}
+          placeholder="User Name"
+        />
       </View>
 
-      <Text>Forget my password</Text>
+      <View style={styles.wrapSubmitButton}>
+        <TouchableOpacity style={styles.submitButton}>
+          <Text>Submit</Text>
+        </TouchableOpacity>
+        <Text style={{alignSelf: 'center'}}>Forget my password</Text>
+      </View>
 
       {/* below close div for wrapper */}
     </View>
@@ -49,7 +62,6 @@ const styles = StyleSheet.create({
   wrapperStyle: {
     flex: 1,
     justifyContent: 'space-start',
- 
   },
   wrapInputStyle: {
     // backgroundColor: 'yellow',
@@ -60,13 +72,25 @@ const styles = StyleSheet.create({
     marginVertical: 5,
     marginHorizontal: 10,
     textAlign: 'center',
-borderWidth:3,
-borderRadius:10,
-borderColor:'green',
-
+    borderWidth: 3,
+    borderRadius: 10,
+    borderColor: 'green',
   },
 
   wrapInputStyle: {},
+  submitButton: {
+    paddingVertical: 10,
+    marginVertical: 5,
+    marginHorizontal: 10,
+    alignItems: 'center',
+    borderWidth: 3,
+    borderRadius: 10,
+    borderColor: 'green',
+  },
+  wrapSubmitButton: {
+    flex:0.4,
+    backgroundColor: 'pink',
+  },
 });
 
 export default NewLogin;
