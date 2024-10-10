@@ -40,20 +40,67 @@ const ChatBox = () => {
 <View style={styles.secondSection}>
 
 <View style={{flex:1, backgroundColor:'green'}}>
-    <View style={{flex:0.5, backgroundColor:'black',margin:5, flexDirection:'row'}}>
-          <View style={{flex:0.5, backgroundColor:'red' , marginHorizontal:5}}></View>
-          <View style={{flex:0.5, backgroundColor:'yellow'}}></View>
-          
+    <View style={{flex:0.5, backgroundColor:'',margin:5, flexDirection:'row'}}>
+          <View style={{flex:0.5, backgroundColor:'red' , justifyContent:'center' , alignItems:'center', borderRadius:20,marginHorizontal:5, position:'relative'}}>
+           
+            {/* this div blue circle in the middle */}
+            <View style={{width:100, 
+              height:100, 
+              borderRadius:100, 
+              backgroundColor:'blue',
+              }}>
+            </View>
+            {/* end blue circle */}
 
+            <Text style={{fontWeight:'bold', position:'absolute', bottom:10, left:15 }}>Speed</Text>
+          </View>
+     
+
+          <View style={{flex:0.5, backgroundColor:'yellow', justifyContent:'center' , alignItems:'center', borderRadius:20,}}>
+            {/* this div blue circle in the middle */}
+            <View style={{width:100, 
+              height:100, 
+              borderRadius:100, 
+              backgroundColor:'blue',
+              }}>
+            </View>
+            {/* end blue circle */}
+          </View>
     </View>
     
+{/* second row- last row */}
+    <View style={{flex:0.5, backgroundColor:'',margin:5, flexDirection:'row'}}>
+          <View style={{flex:0.5, backgroundColor:'red' , marginHorizontal:5, borderRadius:20 , justifyContent:'center' , alignItems:'center',borderRadius:20,}}>
+{/* this div blue circle in the middle */}
+<View style={{width:100, 
+              height:100, 
+              borderRadius:100, 
+              backgroundColor:'blue',
+              }}>
+            </View>
+            {/* end blue circle */}
+            
+          </View>
 
-    <View style={{flex:0.5, backgroundColor:'black',margin:5, flexDirection:'row'}}>
-          <View style={{flex:0.5, backgroundColor:'red' , marginHorizontal:5}}></View>
-          <View style={{flex:0.5, backgroundColor:'yellow'}}></View>
+
+
+          <View style={{flex:0.5, backgroundColor:'yellow' , justifyContent:'center' , alignItems:'center',borderRadius:20,}}>
+{/* this div blue circle in the middle */}
+<View style={{width:100, 
+              height:100, 
+              borderRadius:100, 
+              backgroundColor:'blue',
+              }}>
+            </View>
+            {/* end blue circle */}
+
+
+          </View>
           
 
     </View>
+
+    {/* div above end second row */}
       </View>
 </View>
       
