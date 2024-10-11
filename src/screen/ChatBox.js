@@ -9,8 +9,30 @@ import {
   Image,
   TouchableOpacity,
   Text,
+  FlatList,
 } from 'react-native';
+import Box from '../component/Box';
 const ChatBox = () => {
+  const DATA = [
+    {id: '1', title: 'Item 1'},
+    {id: '2', title: 'Item 2'},
+    {id: '3', title: 'Item 3'},
+    {id: '4', title: 'Item 4'},
+    {id: '4', title: 'Item 4'},
+    {id: '4', title: 'Item 4'},
+    {id: '4', title: 'Item 4'},
+  ];
+
+  const renderItem = () => {
+    return DATA.map((item, index) => (
+      
+      <Box />
+    
+    ));
+  };
+
+ 
+
   return (
     // wrap whole screen
     <View style={styles.wrapper}>
@@ -20,7 +42,8 @@ const ChatBox = () => {
       <View style={styles.firstSection}>
         <View style={styles.headerSection}>
           <Text style={styles.headerText}>
-            Quick {'\n'}<Text>Chat</Text>{' '}
+            Quick {'\n'}
+            <Text>Chat</Text>{' '}
           </Text>
           {/* {"\n"} this is br tag      */}
         </View>
@@ -30,81 +53,40 @@ const ChatBox = () => {
           style={{
             width: 150,
             height: 150,
-             alignSelf: 'center',
+            alignSelf: 'center',
             // marginTop: 30,
 
             borderRadius: 50, //put half value of height or width  to make it round circle
           }}></Image>
       </View>
 
-<View style={styles.secondSection}>
+      <View style={styles.secondSection}>
+      <ScrollView style={{flex:1}} >
+      {renderItem()}
+      </ScrollView>
 
-<View style={{flex:1, backgroundColor:'green'}}>
-    <View style={{flex:0.5, backgroundColor:'',margin:5, flexDirection:'row'}}>
-          <View style={{flex:0.5, backgroundColor:'red' , justifyContent:'center' , alignItems:'center', borderRadius:20,marginHorizontal:5, position:'relative'}}>
-           
-            {/* this div blue circle in the middle */}
-            <View style={{width:100, 
-              height:100, 
-              borderRadius:100, 
-              backgroundColor:'blue',
-              }}>
-            </View>
-            {/* end blue circle */}
+        {/* <FlatList
+          data={DATA}
+          renderItem={renderItem}
+          keyExtractor={item => item.id}
+          numColumns={1}
+        /> */}
 
-            <Text style={{fontWeight:'bold', position:'absolute', bottom:10, left:15 }}>Speed</Text>
-          </View>
-     
+        {/* <View style={{flex:1,backgroundColor:'green',flexDirection:'row'}}>
+  <Box/>
+  <Box/>
+  </View>
 
-          <View style={{flex:0.5, backgroundColor:'yellow', justifyContent:'center' , alignItems:'center', borderRadius:20,}}>
-            {/* this div blue circle in the middle */}
-            <View style={{width:100, 
-              height:100, 
-              borderRadius:100, 
-              backgroundColor:'blue',
-              }}>
-            </View>
-            {/* end blue circle */}
-          </View>
-    </View>
-    
-{/* second row- last row */}
-    <View style={{flex:0.5, backgroundColor:'',margin:5, flexDirection:'row'}}>
-          <View style={{flex:0.5, backgroundColor:'red' , marginHorizontal:5, borderRadius:20 , justifyContent:'center' , alignItems:'center',borderRadius:20,}}>
-{/* this div blue circle in the middle */}
-<View style={{width:100, 
-              height:100, 
-              borderRadius:100, 
-              backgroundColor:'blue',
-              }}>
-            </View>
-            {/* end blue circle */}
-            
-          </View>
-
-
-
-          <View style={{flex:0.5, backgroundColor:'yellow' , justifyContent:'center' , alignItems:'center',borderRadius:20,}}>
-{/* this div blue circle in the middle */}
-<View style={{width:100, 
-              height:100, 
-              borderRadius:100, 
-              backgroundColor:'blue',
-              }}>
-            </View>
-            {/* end blue circle */}
-
-
-          </View>
-          
-
-    </View>
-
-    {/* div above end second row */}
+  
+  <View style={{flex:1,backgroundColor:'green',flexDirection:'row'}}>
+  <Box/>
+  <Box/>
+  </View> */}
+        {/* <View style={{flex:1,backgroundColor:'green',}}>
+  <Box/>
+  <Box/>
+  </View> */}
       </View>
-</View>
-      
-          
     </View>
   );
 };
@@ -113,7 +95,7 @@ const styles = StyleSheet.create({
   wrapper: {
     backgroundColor: 'orange',
     // height: '100%',
-    flex:1
+    flex: 1,
   },
   headerText: {
     color: 'black',
@@ -125,7 +107,7 @@ const styles = StyleSheet.create({
   firstSection: {
     flex: 0.5,
     // backgroundColor: 'green',
-    // alignItems: 'center',    
+    // alignItems: 'center',
     justifyContent: 'center',
   },
   //   quick chat header
@@ -142,6 +124,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+    flexDirection: 'column',
   },
   smallBox: {
     width: '40%',

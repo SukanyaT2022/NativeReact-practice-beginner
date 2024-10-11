@@ -1,4 +1,4 @@
-import React from 'react';
+
 import {
   ScrollView,
   TextInput,
@@ -10,7 +10,10 @@ import {
   TouchableOpacity,
   Text,
 } from 'react-native';
+import Box from '../component/Box';
+
 const NewChatBox = () => {
+  
   return (
     // wrap whole screen
     <View style={styles.wrapper}>
@@ -39,32 +42,7 @@ const NewChatBox = () => {
 
       {/* second section 2 boxes */}
       <View style={styles.secondSection}>
-        {/* small box */}
-        <View style={styles.smallBox}>
-          <Image
-            source={require('../Asset/Image/panicCatBG.webp')}
-            style={{
-              width: 50,
-              height: 50,
-              // alignSelf: 'center',
-              // marginTop: 30,
-
-              borderRadius: 50, //put half value of height or width  to make it round circle
-            }}></Image>
-        </View>
-        {/* small box */}
-        <View style={styles.smallBox}>
-          <Image
-            source={require('../Asset/Image/panicCatBG.webp')}
-            style={{
-              width: 50,
-              height: 50,
-              // alignSelf: 'center',
-              // marginTop: 30,
-
-              borderRadius: 50, //put half value of height or width  to make it round circle
-            }}></Image>
-        </View>
+   {/* <Box/> */}
       </View>
 
       {/* last section */}
