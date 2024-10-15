@@ -10,6 +10,7 @@ import {
   TouchableOpacity,
   Text,
   FlatList,
+  ImageBackground,
 } from 'react-native';
 import Box from '../component/Box';
 const ChatBox = () => {
@@ -23,20 +24,22 @@ const ChatBox = () => {
     {id: '4', title: 'Item 4'},
   ];
 
+  const containImg = "../Asset/Image/raibow2.jpg"
+
   const renderItem = () => {
-    return DATA.map((item, index) => (
-      
-      <Box />
-    
-    ));
+    return DATA.map((item, index) => <Box />);
   };
 
- 
 
   return (
     // wrap whole screen
     <View style={styles.wrapper}>
       {/* header section */}
+<ImageBackground
+ source={require(containImg)}
+ resizeMode='cover'
+ style={{flex:1, }}
+>
 
       {/* first section-image section */}
       <View style={styles.firstSection}>
@@ -58,12 +61,19 @@ const ChatBox = () => {
 
             borderRadius: 50, //put half value of height or width  to make it round circle
           }}></Image>
+
+        <View style={{flex:1, flexDirection:'row',backgroundColor:'pink',justifyContent:'center',}}>
+          <View style={{flex:0.8, backgroundColor:'purple', flexDirection:'row', justifyContent:'space-between', alignItems:'center',}}>
+            <Text>Test!</Text>
+            <Text>Test!</Text>
+          </View>
+          {/* <View style={{flex:0.2, backgroundColor:'blue'}}></View> */}
+        </View>
+
       </View>
 
       <View style={styles.secondSection}>
-      <ScrollView style={{flex:1}} >
-      {renderItem()}
-      </ScrollView>
+        <ScrollView style={{flex: 1}}>{renderItem()}</ScrollView>
 
         {/* <FlatList
           data={DATA}
@@ -87,6 +97,7 @@ const ChatBox = () => {
   <Box/>
   </View> */}
       </View>
+      </ImageBackground>
     </View>
   );
 };
